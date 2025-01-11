@@ -1,0 +1,10 @@
+.contenedor-principal{
+    width: 40%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: cornflowerblue;
+    background-image: url();
+}

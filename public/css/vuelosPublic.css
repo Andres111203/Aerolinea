@@ -1,0 +1,43 @@
+.logo img{
+    width: 60%;
+    height: 50%;
+}
+
+.navegacion{
+    height: 50%;
+    background-color: red;
+}
+
+.navegacion ul li a{
+    color:white;
+    padding-right: 2rem
+}
+
+.opc a:hover{
+    color:white;
+}
+
+.login{
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: white;
+    
+}
+
+.login .nav-link{
+    color:red;
+}
+.login a:hover{
+    color: red !important;
+    text-decoration: underline;
+}
+footer{
+    
+    background-color: #c5c6c3;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
