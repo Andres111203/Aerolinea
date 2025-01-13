@@ -7,10 +7,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-cuE+y5ZGqAlwrVg8zGgGZjE+CmzNUh1F0XPZVgNkOBpe9/BAS2qO7lJDo+yj2P3X" crossorigin="anonymous"></script>
     <link rel="icon" href="./img/logo.jpg">
-    <link rel="stylesheet" href="./css/profile.css">
-    <title>SKYFLY PROFILE</title>
+    <link rel="stylesheet" href="./css/clientes.css">
+    <title>SKYFLY</title>
 </head>
-<!--Vista protegida-->
 <body>
     <header>
         <div class="row">
@@ -21,15 +20,15 @@
                 <nav class="navbar navbar-expand-lg justify-content-center navegacion">
                     <ul class="nav nav-tabs">
                         <li class="nav-item opc">
-                            <a class="nav-link" href="/profile">Editar Vuelos</a>
+                            <a class="nav-link" href="#">Editar Vuelos</a>
                         </li>
                         <li class="nav-item opc">
                             <a class="nav-link" href="/aviones">Aviones</a>
                         </li>
-                        <li class="nav-item opc-nav">
+                        <li class="nav-item opc">
                             <a class="nav-link" href="/pilotos">Pilotos</a>
                         </li>
-                        <li class="nav-item opc">
+                        <li class="nav-item opc-nav">
                             <a class="nav-link" href="/clientesProtected">Editar clientes</a>
                         </li>
                         <li class="nav-item " id="cerrarSesion">
@@ -40,117 +39,110 @@
             </div>
         </div>
     </header>
-    <div class="d-inline p-2 edit">Editar Pilotos</div>
-    <div class="container mt-5">
+    <div class="container mt-4">
+        <h1 class="blockquote">Gestion de Clientes</h1>
         <form class="container mt-4" id="formCliente">
             <div class="row">
                 <div class="col-12 col-md-4 mb-1">
                     <div class="form-group">
-                        <label for="id_piloto">Id Piloto<span>*</span></label>
-                        <input type="number" class="form-control w-100" name="id_piloto"
-                        min="1" max="99999999" title="Por favor ingrese un ID válido entre 1 y 99,999,999" id="id_piloto" required>
+                        <label for="id_cliente">ID<span>*</span></label>
+                        <input type="number" class="form-control w-100" name="id_cliente"
+                        min="1" max="99999999" title="Por favor ingrese un ID válido entre 1 y 99,999,999" id="id_cliente" required>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 mb-1">
                     <div class="form-group">
-                        <label for="nombre_1">Nombre 1<span>*</span></label>
-                        <input type="text" class="form-control w-100" id="nombre_1" name="nombre_1" required>
+                        <label for="primer_nombre">Primer Nombre<span>*</span></label>
+                        <input type="text" class="form-control w-100" id="primer_nombre" name="primer_nombre" required>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 mb-1">
                     <div class="form-group">
-                        <label for="nombre_2">Nombre 2</label>
-                        <input type="text" class="form-control" id="nombre_2" name="nombre_2" required>
+                        <label for="segundo_nombre">Segundo Nombre</label>
+                        <input type="text" class="form-control w-100" name="segundo_nombre" id="segundo_nombre">
                     </div>
                 </div>
                 <div class="col-12 col-md-4 mb-1">
                     <div class="form-group">
-                        <label for="apellido_1">Apellido 1<span>*</span></label>
-                        <input type="text" class="form-control w-100" name="apellido_1" id="apellido_1">
+                        <label for="primer_apellido">Primer Apellido<span>*</span></label>
+                        <input type="text" class="form-control w-100" name="primer_apellido" id="primer_apellido" required>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 mb-1">
                     <div class="form-group">
-                        <label for="apellido_2">Apellido 2</label>
-                        <input type="text" class="form-control w-100" name="apellido_2" id="apellido_2">
+                        <label for="segundo_apellido">Segundo Apellido</label>
+                        <input type="text" class="form-control w-100" name="segundo_apellido" id="segundo_apellido">
                     </div>
                 </div>
                 <div class="col-12 col-md-4 mb-1">
-                    <div class="form-group">
-                        <label for="fechaNacimiento">Fecha de Nacimiento<span>*</span></label>
-                        <input type="text" class="form-control w-100" name="fechaNacimiento" id="fechaNacimiento" placeholder="Seleccione una fecha" required>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4 mb-1 contenedor-label">
                     <div class="form-group">
                         <label for="telefono_1">Telefono 1<span>*</span></label>
-                        <input type="text" class="form-control w-100" name="telefono_1" id="telefono_1">
-                    </div> 
+                        <input type="text" class="form-control w-100" name="telefono_1" id="telefono_1" required>
+                    </div>
                 </div>
-                <div class="col-12 col-md-4 mb-1 contenedor-label">
+                <div class="col-12 col-md-4 mb-1">
                     <div class="form-group">
                         <label for="telefono_2">Telefono 2</label>
                         <input type="text" class="form-control w-100" name="telefono_2" id="telefono_2">
                     </div> 
                 </div>
-                <div class="col-12 col-md-4 mb-1 contenedor-label">
+                <div class="col-12 col-md-4 mb-1">
                     <div class="form-group">
-                        <label for="email">Email<span>*</span></label>
-                        <input type="text" class="form-control w-100" name="email" id="email">
-                    </div> 
+                        <label for="email">Correo electrónico<span>*</span></label>
+                        <input type="text" class="form-control w-100" name="email" id="email" required>
+                    </div>
                 </div>
-                <div class="col-12 col-md-4 mb-1 contenedor-label">
+                <div class="col-3 col-md-2 mb-1">
                     <div class="form-group">
-                        <label for="licencia">Licencia<span>*</span></label>
-                        <input type="text" class="form-control w-100" name="licencia" id="licencia">
-                    </div> 
+                        <label for="edad">edad<span>*</span></label>
+                        <input type="number" class="form-control w-100" name="edad" id="edad" required>
+                    </div>
                 </div>
-                <div class="col-12 col-md-4 mb-1 contenedor-label">
+                <div class="col-12 col-md-4 mb-1">
                     <div class="form-group">
-                        <label for="estado">Estado<span>*</span></label>
-                        <input type="text" class="form-control w-100" name="estado" id="estado">
-                    </div> 
+                        <label for="pte">Numero de pasaporte<span>*</span></label>
+                        <input type="number" class="form-control w-100" name="pte" id="pte" required>
+                    </div>
                 </div>
             </div>
             <div class="btn-group mt-3">
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="submit" class="btn btn-primary mx-2 rounded w-90" onclick="cargarClientes()" id="listar">Agregar</button>
                 <button type="reset" class="btn btn-primary mx-2">Eliminar</button>
-                <button type="button" class="btn btn-primary mx-2" onclick="">Aviones</button>
                 <input class="form-control mx-2 rounded" type="search" id="searchInput" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success rounded" type="button" onclick="">Search</button>
             </div>
+            
         </form>
         <table class="table table-bordered table-striped table-hover mt-4">
             <thead>
               <tr>
-                <th scope="col">Id Piloto</th>
-                <th scope="col">Nombre 1</th>
-                <th scope="col">Nombre 2</th>
-                <th scope="col">Apellido 1</th>
-                <th scope="col">Apellido 2</th>
-                <th scope="col">Fecha de Nacimiento</th>
+                <th scope="col">Id cliente</th>
+                <th scope="col">Primer Nombre</th>
+                <th scope="col">Segundo Nombre</th>
+                <th scope="col">Primer Apellido</th>
+                <th scope="col">Segundo Apellido</th>
                 <th scope="col">Telefono 1</th>
                 <th scope="col">Telefono 2</th>
-                <th scope="col">Email</th>
-                <th scope="col">Licencia</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Edad</th>
+                <th scope="col">Pasaporte</th>
+                <th scope="col">Acciones</th>
                 <th scope="col">Estado</th>
+
               </tr>
             </thead>
+            <tbody id="clientesTBd">
+            </tbody>
+        </table>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-datepicker@1.9.0/dist/js/bootstrap-datepicker.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./clientesProtect.js"></script>
     <script>
-        $(document).ready( () => {
-            $('#fechaNacimiento').datepicker({
-                format: 'yyyy-mm-dd',
-                startDate: '-3d'
-            });
-        });
         const cerrarSesion = document.querySelector('#cerrarSesion')
-      cerrarSesion.addEventListener('click', () => {
-        window.location.href = '/login'
-      })
+        cerrarSesion.addEventListener('click', () => {
+            window.location.href = '/login'
+        })
     </script>
 </body>
 </html>

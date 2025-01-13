@@ -1,0 +1,50 @@
+.logo img{
+    width: 60%;
+    height: 50%;
+}
+
+.navegacion{
+    height: 50%;
+    background-color: red;
+}
+
+.opc a{
+    color:white;
+    padding-right: 2rem
+}
+.opc-nav a{
+    border-radius: 5px;
+    background-color: white;
+    color: red;
+}
+
+.opc a:hover{
+    color:white;
+}
+.opc-nav a:hover{
+    color: red;
+    text-decoration: underline;
+}
+
+.login{
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: white;
+    
+}
+span{
+    color: red;
+}
+
+.login .nav-link{
+    color:red;
+}
+.login a:hover{
+    color: red !important;
+    text-decoration: underline;
+}
+.contenedor-principal{
+    width: 100%;
+    margin: 0px 10% 0px 20%;
+
+}

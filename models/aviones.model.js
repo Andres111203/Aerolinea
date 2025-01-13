@@ -17,7 +17,8 @@ const insertarAvion = async({id_avion, modelo, fabricante, capacidad_pasajeros, 
 
 const buscarAvionporId = async(id_avion) => {
     const query = {
-        text: `SELECT * FROM administracion.aviones WHERE id_avion = $1`,
+        text: `SELECT * FROM administracion.aviones 
+        WHERE id_avion = $1`,
         values: [id_avion]
     }
     const {rows} = await db.query(query)

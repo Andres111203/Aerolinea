@@ -34,8 +34,10 @@ const readclients = async(req, res) => {
         
 }
 const updateClient = async(req, res) => {
-    const {id_cliente} = req.params
-    const updatefields = req.body
+    const {id_cliente} = req.params;
+    const updatefields = req.body;
+
+    const updatedClient = await ClienteModel.updateClient(id_cliente, updatefields)
     try{
         if(!id_cliente || !updatefields){
             return res.status(400).json({message: "Faltan campos obligatorios"})
@@ -44,8 +46,8 @@ const updateClient = async(req, res) => {
         if(!client){
             return res.status(404).json({message: "El cliente no existe"})
         }
-        const updatedClient = await ClienteModel.updateOne(id_cliente, updatefields)
-        return res.status(200).json({ok: true, msg: `usuario actualizado ${updatedClient}`})
+        
+        return res.status(200).json({ok: true, msg: `usuario actualizado`, data:updatedClient})
     }catch(error){
         console.log(error)
         return res.status(500).json({ok: false, msg: error})
@@ -69,6 +71,20 @@ const changeState = async(req, res) => {
         return res.status(500).json({ok:false, msg:"error al actualizar el estado del cliente"})
     }
 }
+
+const getCliente = async(req, res) => {
+    const {id_cliente} = req.params
+    try{
+        const client = await ClienteModel.findOneById(id_cliente)
+        if(!client){
+            return res.status(404).json({message: "El cliente no existe"})
+        }
+        return res.status(200).json({ok: true, msg: `cliente encontrado`, data: client})
+    }catch(error){
+        console.log(error)
+        return res.status(500).json({ok: false, msg: "error al buscar cliente"})
+    }
+}
 const deletecliente = async(req, res) => {
     const { id_cliente } = req.params;
     try {
@@ -89,5 +105,6 @@ export const ClienteController = {
     updateClient,
     readclients,
     changeState,
+    getCliente,
     deletecliente
 }

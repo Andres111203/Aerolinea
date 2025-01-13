@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="./css/profile.css">
     <title>SKYFLY PROFILE</title>
 </head>
-<!--Vista protegida-->
 <body>
     <header>
         <div class="row">
@@ -21,13 +20,19 @@
                 <nav class="navbar navbar-expand-lg justify-content-center navegacion">
                     <ul class="nav nav-tabs">
                         <li class="nav-item opc">
-                            <a class="nav-link" href="./profile.vuelos.html">Editar Vuelos</a>
+                            <a class="nav-link" href="/profile">Editar Vuelos</a>
                         </li>
                         <li class="nav-item opc-nav">
-                            <a class="nav-link" href="#">Aviones</a>
+                            <a class="nav-link" href="/aviones">Aviones</a>
                         </li>
                         <li class="nav-item opc">
-                            <a class="nav-link" href="./profile.pilotos.html">Pilotos</a>
+                            <a class="nav-link" href="/pilotos">Pilotos</a>
+                        </li>
+                        <li class="nav-item opc">
+                            <a class="nav-link" href="/clientesProtected">Editar clientes</a>
+                        </li>
+                        <li class="nav-item " id="cerrarSesion">
+                            <button type="button" class="btn btn-primary">Cerrar Sesion</button>
                         </li>
                     </ul>
                 </nav>
@@ -103,5 +108,11 @@
               </tr>
             </thead>
     </div>
+    <script>
+        const cerrarSesion = document.querySelector('#cerrarSesion')
+        cerrarSesion.addEventListener('click', () => {
+            window.location.href = '/login'
+        })
+    </script>
 </body>
 </html>

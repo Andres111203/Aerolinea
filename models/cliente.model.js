@@ -25,7 +25,7 @@ const findOneByEmail = async(email) =>{
 }
 
 const updateClient = async(id_cliente, updatefields) =>{
-    const datosActulizar = Object.keys(updatefields).map((key, index) => `${key} = $${index}`).join(', ')
+    const datosActulizar = Object.keys(updatefields).map((key, index) => `${key} = $${index + 2}`).join(', ')
     const valores = [id_cliente, ...Object.values(updatefields)]
     const query = {
         text: `UPDATE clientes.clientes 
@@ -59,7 +59,7 @@ const deleteCliente = async(id_cliente) => {
         if(rows.rowCount === 0){
             throw new Error('No se encontró el cliente')
         }
-        return res.json({ok: true, msg: "se elimio correctamente el cliente"})
+        return "se elimina correctamente el cliente"
         }catch(error){
             console.log(error);
             throw new Error("error al eliminar el cliente")

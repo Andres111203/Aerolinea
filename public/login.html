@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="">
     <style>
         .registro{
             color: white;
@@ -15,9 +15,18 @@
         .registro:hover{
             text-decoration: underline;
         }
+        .home{
+            position: fixed;
+        }
     </style>
 </head>
 <body>
+    <div class="container home">
+        <a href="/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+          </svg></a>
+          Inicio
+    </div>
     <div class="d-flex align-items-center justify-content-center" style="height: 100vh;">
         <div class="d-flex p-2 flex-column align-items-center" style="background-color: #f15c3c; height: 40vw; width: 70vh; padding: 12px; border-radius: 10px;">
             <div class="container text-center mb-4 mt-4">
@@ -30,7 +39,7 @@
             <div class="plane mb-5">
                 <img src="./img/logo.jpg" alt="Avión" />
             </div>
-            <form id="regForm">
+            <form  id="logForm">
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Correo</label>
                   <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ingrese su correo" name="email">
@@ -46,6 +55,40 @@
             </form>
         </div>
     </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        // /api/v1/user/login
+        console.log("procesando formualrio");
+        const login = document.querySelector('#logForm')
+        login.addEventListener('submit', async (e) => {
+            e.preventDefault()
+            const email = e.target.email.value
+            const password = e.target.password.value
+            try{
+                const {data} = await axios.post('/api/v1/user/login', {
+                    email: email,
+                    password: password
+                })
+                console.log(data.msg)
+              
+                if(data.msg.role === 'superUsuario'){
+                    window.location.href = '/profile'
+                    return
+                }
+                if(data.msg.role === 'cliente'){
+                    window.location.href = '/inicio_clientes'
+                    return
+                }
+                localStorage.setItem('token', data.msg.token)
+                window.location.href = '/'
+                login.reset()
+               
+            }catch(error){
+                console.log(error)
+                alert("error al loguearse. Credenciales invalidas")
+            }
+        });
+    </script>
 </body> 
 </html>

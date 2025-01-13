@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-cuE+y5ZGqAlwrVg8zGgGZjE+CmzNUh1F0XPZVgNkOBpe9/BAS2qO7lJDo+yj2P3X" crossorigin="anonymous"></script>
     <link rel="icon" href="./img/logo.jpg">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/clientes.css">
     <title>SKYFLY</title>
 </head>
 <body>
@@ -19,38 +19,37 @@
             <div class="col-10 nav-nav">
                 <nav class="navbar navbar-expand-lg justify-content-center navegacion">
                     <ul class="nav nav-tabs">
-                        <li class="nav-item opc" style="padding: 0 20px 0 20px;">
+                        <li class="nav-item opc-nav" style="padding: 0 20px 0 20px;">
                             <a class="nav-link" aria-current="page" href="#">Clientes</a>
                         </li>
                         <li class="nav-item opc">
                             <a class="nav-link" href="#">Vuelos</a>
-                        </li>
-                        <li class="nav-item opc">
-                            <a class="nav-link" href="#">Contactanos</a>
-                        </li>
-                        <li class="nav-item login">
-                            <a class="nav-link" href="./login">Iniciar Sesion</a>
                         </li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
+    <div class="container home">
+        <a href="/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+          </svg></a>
+          Inicio
+    </div>
     <div class="container mt-4">
         <h1 class="blockquote">Gestion de Clientes</h1>
-        <!-- Formulario para pedir los datos -->
         <form class="container mt-4" id="formCliente">
             <div class="row">
                 <div class="col-12 col-md-4 mb-1">
                     <div class="form-group">
-                        <label for="id_cliente">ID</label>
+                        <label for="id_cliente">ID<span>*</span></label>
                         <input type="number" class="form-control w-100" name="id_cliente"
                         min="1" max="99999999" title="Por favor ingrese un ID válido entre 1 y 99,999,999" id="id_cliente" required>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 mb-1">
                     <div class="form-group">
-                        <label for="primer_nombre">Primer Nombre *</label>
+                        <label for="primer_nombre">Primer Nombre<span>*</span></label>
                         <input type="text" class="form-control w-100" id="primer_nombre" name="primer_nombre" required>
                     </div>
                 </div>
@@ -62,19 +61,19 @@
                 </div>
                 <div class="col-12 col-md-4 mb-1">
                     <div class="form-group">
-                        <label for="primer_apellido">Primer Apellido *</label>
+                        <label for="primer_apellido">Primer Apellido<span>*</span></label>
                         <input type="text" class="form-control w-100" name="primer_apellido" id="primer_apellido" required>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 mb-1">
                     <div class="form-group">
-                        <label for="segundo_apellido">Segundo Apellido*</label>
+                        <label for="segundo_apellido">Segundo Apellido</label>
                         <input type="text" class="form-control w-100" name="segundo_apellido" id="segundo_apellido">
                     </div>
                 </div>
                 <div class="col-12 col-md-4 mb-1">
                     <div class="form-group">
-                        <label for="telefono_1">Telefono 1*</label>
+                        <label for="telefono_1">Telefono 1<span>*</span></label>
                         <input type="text" class="form-control w-100" name="telefono_1" id="telefono_1" required>
                     </div>
                 </div>
@@ -86,24 +85,52 @@
                 </div>
                 <div class="col-12 col-md-4 mb-1">
                     <div class="form-group">
-                        <label for="email">Correo electrónico*</label>
+                        <label for="email">Correo electrónico<span>*</span></label>
                         <input type="text" class="form-control w-100" name="email" id="email" required>
                     </div>
                 </div>
                 <div class="col-3 col-md-2 mb-1">
                     <div class="form-group">
-                        <label for="edad">edad*</label>
+                        <label for="edad">edad<span>*</span></label>
                         <input type="number" class="form-control w-100" name="edad" id="edad" required>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 mb-1">
                     <div class="form-group">
-                        <label for="pte">Numero de pasaporte*</label>
-                        <input type="number"  class="form-control w-100" name="pte" id="pte" required>
+                        <label for="pte">Numero de pasaporte<span>*</span></label>
+                        <input type="number" class="form-control w-100" name="pte" id="pte" required>
                     </div>
                 </div>
             </div>
+            <div class="btn-group mt-3">
+                <button type="submit" class="btn btn-primary mx-2 rounded w-100">Agregar</button>
+                <button type="click" class="btn btn-primary mx-2 rounded w-100" onclick="cargarClientes()" id="listar">Listar</button>
+            </div>
+            
         </form>
+        <table class="table table-bordered table-striped table-hover mt-4">
+            <thead>
+              <tr>
+                <th scope="col">Id cliente</th>
+                <th scope="col">Primer Nombre</th>
+                <th scope="col">Segundo Nombre</th>
+                <th scope="col">Primer Apellido</th>
+                <th scope="col">Segundo Apellido</th>
+                <th scope="col">Telefono 1</th>
+                <th scope="col">Telefono 2</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Edad</th>
+                <th scope="col">Pasaporte</th>
+                <th scope="col">Acciones</th>
+
+              </tr>
+            </thead>
+            <tbody id="clientesTBd">
+            </tbody>
+        </table>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./clientes.js"></script>
 </body>
 </html>

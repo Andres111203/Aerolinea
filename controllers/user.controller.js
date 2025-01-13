@@ -67,7 +67,11 @@ const logIn = async (req, res) => {
                 "expiresIn" : "1h"
         })
 
-        return res.status(200).json({ok: true, msg: token})
+        return res.status(200).json({ok: true, msg: {
+            token,
+            role: usuario.role
+            }
+        })
              
 
     }catch(error){
@@ -76,7 +80,30 @@ const logIn = async (req, res) => {
     }
 }
 
+/*const profile = async (req, res) => {
+    try{
+        
+    }catch{
+
+    }
+
+}*/
+const searchUser = async(req, res) => {
+    try{
+        const {email} = req.body
+        const usuario = await UserModel.findOneByEmail(email)
+        if(!usuario){
+            return res.status(400).json({message: "El usuario no existe."})
+        }
+        return res.status(200).json({ok: true, msg: usuario})
+    }catch(error){
+        console.log(error);
+        res.status(500).json({ ok: false, message: 'error del servidor' })
+    }
+}
+
 export const UserController = {
     register,
-    logIn
+    logIn,
+    searchUser
 }
