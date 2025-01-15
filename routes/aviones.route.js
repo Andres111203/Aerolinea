@@ -3,6 +3,7 @@ import { AvionController } from "../controllers/aviones.controller.js";
 
 const router = Router()
 
+// /api/v1/aviones/create
 router.post('/create', AvionController.agregarAvion)
 router.get('/list', AvionController.findAll)
 router.patch('/:id_avion', AvionController.actualizarAvion)

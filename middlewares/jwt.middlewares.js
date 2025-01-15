@@ -22,8 +22,9 @@ export const verifyToken = async (req, res, next) => {
 export const verifySupUser = async (req, res, next) =>{
     if(req.role === 'superUsuario'){
         next()
+    }else{
+        return res.status(403).json({error: "no tienes permisos de acceso"})
     }
-    return res.status(403).json({error: "no tienes permisos de acceso"})
 
 }
 

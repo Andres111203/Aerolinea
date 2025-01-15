@@ -41,7 +41,7 @@
     </header>
     <div class="d-inline p-2 edit">Editar Aviones</div>
     <div class="container mt-5">
-        <form class="container mt-4" id="formCliente">
+        <form class="container mt-4" id="formAviones">
             <div class="row">
                 <div class="col-12 col-md-4 mb-1">
                     <div class="form-group">
@@ -65,19 +65,13 @@
                 <div class="col-12 col-md-4 mb-1">
                     <div class="form-group">
                         <label for="capacidad">Capacidad de pasajeros<span>*</span></label>
-                        <input type="number" min = "50000" max="99999999999" class="form-control w-100" name="capacidad" id="capacidad">
+                        <input type="number" min = "111" max="99999999999" class="form-control w-100" name="capacidad" id="capacidad">
                     </div>
                 </div>
                 <div class="col-12 col-md-4 mb-1">
                     <div class="form-group">
                         <label for="anio">Año de Fabricacion<span>*</span></label>
-                        <input type="number" min = "50000" max="99999999999" class="form-control w-100" name="anio" id="anio">
-                    </div>
-                </div>
-                <div class="col-12 col-md-4 mb-1">
-                    <div class="form-group">
-                        <label for="estado">Estado<span>*</span></label>
-                        <input type="text" class="form-control w-100" name="estado" id="estado" required>
+                        <input type="number" min = "111" max="99999999999" class="form-control w-100" name="anio" id="anio">
                     </div>
                 </div>
                 <div class="col-12 col-md-4 mb-1 contenedor-label">
@@ -88,7 +82,7 @@
                 </div>
             </div>
             <div class="btn-group mt-3">
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <button type="submit" class="btn btn-primary">Crear</button>
                 <button type="reset" class="btn btn-primary mx-2">Eliminar</button>
                 <button type="button" class="btn btn-primary mx-2" onclick="">Aviones</button>
                 <input class="form-control mx-2 rounded" type="search" id="searchInput" placeholder="Search" aria-label="Search">
@@ -105,14 +99,42 @@
                 <th scope="col">Año Fabricacion</th>
                 <th scope="col">Estado</th>
                 <th scope="col">Descripcion</th>
+                <th scope="col">Accion</th>
               </tr>
             </thead>
+            <tbody id="avionesTBd">
+
+            </tbody>
     </div>
     <script>
         const cerrarSesion = document.querySelector('#cerrarSesion')
         cerrarSesion.addEventListener('click', () => {
             window.location.href = '/login'
         })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    <script src="./aviones.js"></script>
+    <script>
+        const token = localStorage.getItem('token')
+        if(!token){
+                window.location.href = '/'
+        }
+        try{
+            const tokenDecoded = jwt_decode(token)
+            if(tokenDecoded.role !== 'superUsuario'){
+                window.location.href = '/' 
+            }
+            
+        }catch(error){
+            console.log(error)
+            Swal.fire({
+                title: 'Error',
+                text: 'Ha ocurrido un error al verificar el token',
+                icon: 'error',
+            })
+        }
     </script>
 </body>
 </html>

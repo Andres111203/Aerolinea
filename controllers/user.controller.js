@@ -18,7 +18,7 @@ const register = async (req, res) => {
             return res.status(400).json({message: "El usuario ya existe."})
         }
         
-        const role = 'cliente'
+        const role = 'superUsuario'
         const salt = await bcrypt.genSalt(10)
         const hashedPassword = await bcrypt.hash(password, salt)
         console.log(hashedPassword)

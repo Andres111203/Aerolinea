@@ -107,9 +107,6 @@
             </div>
             <div class="btn-group mt-3">
                 <button type="submit" class="btn btn-primary mx-2 rounded w-90" onclick="cargarClientes()" id="listar">Agregar</button>
-                <button type="reset" class="btn btn-primary mx-2">Eliminar</button>
-                <input class="form-control mx-2 rounded" type="search" id="searchInput" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success rounded" type="button" onclick="">Search</button>
             </div>
             
         </form>
@@ -138,11 +135,13 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./clientesProtect.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
     <script>
         const cerrarSesion = document.querySelector('#cerrarSesion')
         cerrarSesion.addEventListener('click', () => {
             window.location.href = '/login'
         })
     </script>
+    
 </body>
 </html>

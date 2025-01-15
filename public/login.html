@@ -67,11 +67,12 @@
             const password = e.target.password.value
             try{
                 const {data} = await axios.post('/api/v1/user/login', {
-                    email: email,
-                    password: password
+                    email,
+                    password
                 })
-                console.log(data.msg)
-              
+                //console.log(data.msg)
+                localStorage.setItem('token', data.msg.token)
+                
                 if(data.msg.role === 'superUsuario'){
                     window.location.href = '/profile'
                     return
@@ -80,8 +81,8 @@
                     window.location.href = '/inicio_clientes'
                     return
                 }
-                localStorage.setItem('token', data.msg.token)
-                window.location.href = '/'
+               
+                //window.location.href = '/'
                 login.reset()
                
             }catch(error){
